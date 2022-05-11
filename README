@@ -1,0 +1,7 @@
+This Project can be built and deployed using vivado on a Cypress CY8CPROTO-063 micro-controller.
+
+The Directory titled "ZipFolder" is the folder of all the needed files that you can import into vivado.
+Once imported you can build the project then program the micro-controller.
+
+The oscilloscope.c file is the main code that runs on the micro-controller.
+This code is run on the 2nd core of the microcontroller and is under main_cm4.c in the zip folder.
