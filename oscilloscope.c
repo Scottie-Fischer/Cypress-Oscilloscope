@@ -1,11 +1,8 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * Code Written by Scott Fischer
+ * 
+ * Oscilloscope Project Main File
  *
  * ========================================
 */
@@ -28,38 +25,12 @@ int DMA_flag = -1;  //Global Flag where -1 is none. 0 is array1 is ready, 1 is a
 
 void DMA_1_ISR(void){
     /* Clear interrupt */
-    /*
-    if (Cy_DMA_Channel_GetStatus(DMA_1_HW, DMA_1_DW_CHANNEL) != CY_DMA_INTR_CAUSE_COMPLETION){
-            char printer[64];
-            sprintf(printer,"Error\n\r");
-            uart_printf(printer);
-    }
-    */
-    
-    //Cy_GPIO_Inv(LED_0_PORT,LED_0_NUM);
-    /*
-    if(DMA_flag == 1 || DMA_flag == 2){
-        char printer[64];
-        sprintf(printer,"DMA_flag:%i -> too slow\n\r",DMA_flag);
-        uart_printf(printer);
-    }*/
     
     if(DMA_flag == -1 || DMA_flag == 2){
-        
-        //Cy_SysLib_DelayUs(5);
-        //char printer[64];
-        //sprintf(printer,"DMA_flag:%i -> 1\n\r",DMA_flag);
-        //uart_printf(printer);
-        
         DMA_flag = 1;
         Cy_SysLib_DelayUs(100);
     }
     else{
-        //Cy_SysLib_DelayUs(5);
-        //char printer[64];
-        //sprintf(printer,"DMA_flag:%i -> 2\n\r",DMA_flag);
-        //uart_printf(printer);
-        
         DMA_flag = 2;
         Cy_SysLib_DelayUs(100);
     }
